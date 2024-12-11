@@ -235,7 +235,7 @@ def main():
     polygon_index = st.sidebar.number_input("Polygon Index (City Boundary)", min_value=0, max_value=100, value=10)
 
     # File upload for shapefile
-    shapefile_path = st.sidebar.text_input("Shapefile Path", "../../ex_gis/cb_2018_us_csa_500k.shp")
+    shapefile_path = st.sidebar.text_input("Shapefile Path", "ex_gis/cb_2018_us_csa_500k.shp")
 
     # Run simulation when user clicks the button
     if st.sidebar.button("Run Simulation"):
