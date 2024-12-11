@@ -23,5 +23,6 @@ if st.button("Run Simulation"):
 
     for _ in range(steps):
         city.step()
+        city.plot_grid()
 
     city.plot_grid()
