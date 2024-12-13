@@ -21,8 +21,8 @@ city_name = st.sidebar.selectbox("City Name", city_names)
 city_num = city_names.index(city_name)
 city_boundary = gdf.geometry.iloc[city_num]
 
-white_population = st.sidebar.slider("White Population", min_value=100, max_value=1000, value=400)
-black_population = st.sidebar.slider("Black Population", min_value=10, max_value=200, value=20)
+white_population = st.sidebar.slider("Majority Population", min_value=100, max_value=1000, value=400)
+black_population = st.sidebar.slider("Minority Population", min_value=10, max_value=200, value=20)
 min_distance = st.sidebar.slider("Min Distance", min_value=0.0, max_value=2.0, value=0.1)
 max_step_size = st.sidebar.slider("Max Step Size", min_value=0.01, max_value=1.0, value=0.1)
 steps = st.sidebar.slider("Simulation Steps", min_value=1, max_value=50, value=10)
