@@ -1,9 +1,17 @@
-**Background**
-*Context:*
+<h1>GeoFlux</h1>
+
+<h2>Background</h2>
+
+<h3>Context</h3>
+
 American cities are dynamic entities regarding racial makeup in a geographic sense. City centers in before the Great Migration consisted largely of White European population; but, with the influx of rural Black Southerners fleeing the South for greater opportunity, many of these city centers became predominantly Black as White people fled in masses in an event known as White Flight. Yet, in recent years there has been a new phenomenon – gentrification. There has been a reversal of White Flight in which White people are moving back into city centers in droves, in turn hiking up housing costs and driving extant communities out into the areas originally founded as suburbs. This trend was the inspiration in large part behind my choice of AAS 350. In my home city of Indianapolis, this has been on display in large part on the city’s northside – resulting in a displacement of Indianapolis’s historic Black communities on the near west and east sides. Curious to the root causes of this, I explored how race relationships can be modelled in a statistical lens to result in familiar patterns of population composition change. Combining my loves of computer programming and population statistics, I modeled how the combination of White Flight and gentrification emerges in a software called GeoFlux. GeoFlux models population shifts of cities given a set of parameters and outputs plots of cities at time steps, such that the user can observe population structure trends as they evolve. 
 
-**Modeling**
-*Theoretical Model:*
+<h2>Modeling</h2>
+
+<h3>Theoretical Model</h3>
+
 The basis of the model lies in the race relationships between neighbors. Each family in the model is designated with a race attribute: majority or minority. The tags majority and minority were decided upon in the case that the project expand into cities across other continents, where the nomenclature of White and Black are not necessarily applicable. Given their neighbors, the model determines a direction in which it believes the family will move at the next time step. In this model, majority races are attracted toward other members of majority races and repelled by neighbors of minority races. Families of minority races experience slight attraction toward both members of majority and minority races. These interactions help to model White Flight in American cities. Every family additionally experiences attraction toward city centers. The parameters designed in the model allow for this relationship to eventually develop into majority race movement trends into the inner cities, thus modeling gentrification.
-*Mathematical Model:*
+
+<h3>Mathematical Model:</h3>
+
 The model is based around the concept of a stochastic vector field. The interaction between each family and its neighbor is defined by a single directional vector, where the direction of this vector is dependent upon the race relationship. Each vector then undergoes an inverse square law transformation such that neighbors closer to the family have a greater effect on the outcome. Each effect vector is then summed to result in a total effect vector. This vector then undergoes random sampling under a normal distribution. This allows for stochasticity in the movement of each family. Each neighbor effect vector is summed and then added to a calculated centroid vector that points to the centroid of the city shape. This end vector is the direction in which the family will move.
