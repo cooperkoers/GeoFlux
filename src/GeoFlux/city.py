@@ -85,8 +85,8 @@ class City:
                 black_x.append(family.x)
                 black_y.append(family.y)
 
-        plt.scatter(white_x, white_y, color='orange', label="White Families", s=50)
-        plt.scatter(black_x, black_y, color='black', label="Black Families", s=50)
+        plt.scatter(white_x, white_y, color='orange', label="Majority Families", s=50)
+        plt.scatter(black_x, black_y, color='black', label="Minority Families", s=50)
 
         x, y = self.city_boundary.exterior.xy
         plt.plot(x, y, color='red', linewidth=2, label="City Boundary")
