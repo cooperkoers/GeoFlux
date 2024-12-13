@@ -21,18 +21,19 @@ class StochasticVectorField2D:
             if (f.race == "black" and self.family.race == "white"):
                 vector -= 0.001 * effect * direction
             if (f.race == "white" and self.family.race == "white"):
-                vector += 0.0001 * effect * direction
+                vector += 0.0005 * effect * direction
 
             if (f.race == "black" and self.family.race == "black"):
-                vector += 0.0000
-            if (f.race == "white" and self.family.race == "black"):
                 vector += 0.00005 * effect * direction
+            if (f.race == "white" and self.family.race == "black"):
+                vector += 0.0001 * effect * direction
 
             vector += np.random.normal(0, 0.05, 2)
 
         center = self.city.city_boundary.centroid
         center_x, center_y = center.x, center.y
 
+        # Add a force towards the center of the city
         direction = np.array([center_x - self.family.x, center_y - self.family.y])
         distance = np.linalg.norm(direction)
         if distance == 0:

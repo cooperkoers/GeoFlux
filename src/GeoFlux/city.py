@@ -70,7 +70,7 @@ class City:
             nearest_point = nearest_points(point, self.city_boundary.boundary)[1]
             return nearest_point.x, nearest_point.y
 
-    def plot_grid(self):
+    def plot_grid(self, step_num, city_name):
         plt.figure(figsize=(6, 6))
         white_x = []
         white_y = []
@@ -93,8 +93,8 @@ class City:
 
         plt.xlim(self.city_boundary.bounds[0], self.city_boundary.bounds[2])
         plt.ylim(self.city_boundary.bounds[1], self.city_boundary.bounds[3])
-        plt.xlabel('X Coordinate')
-        plt.ylabel('Y Coordinate')
-        plt.title('Family Positions in the City')
+        plt.xlabel('Longitude')
+        plt.ylabel('Latitude')
+        plt.title(f"Family Positions in {city_name} at Step {step_num}")
         plt.legend()
         st.pyplot(plt)
