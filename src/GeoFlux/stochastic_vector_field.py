@@ -24,9 +24,9 @@ class StochasticVectorField2D:
                 vector += 0.0005 * effect * direction
 
             if (f.race == "black" and self.family.race == "black"):
-                vector += 0.00005 * effect * direction
-            if (f.race == "white" and self.family.race == "black"):
                 vector += 0.0001 * effect * direction
+            if (f.race == "white" and self.family.race == "black"):
+                vector += 0.00005 * effect * direction
 
             vector += np.random.normal(0, 0.05, 2)
 
